@@ -1,0 +1,970 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Angular/NestJS Client/Server Example">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-angular-nestjs-sept-2026/chapter-4---introduction-to-angular.html">
+      
+      
+        <link rel="prev" href="chapter-3---the-nestjs-server-for-the-rdvmedecins-application.html">
+      
+      
+        <link rel="next" href="chapter-5---the-angular-client-of-the-rdvmedecins-application.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>5. Chapter 4 - Introduction to [Angular] - An Angular/NestJS Client/Server Example</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Angular/NestJS Client/Server Example";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-chapter-4-introduction-to-angular" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Angular/NestJS Client/Server Example" class="md-header__button md-logo" aria-label="An Angular/NestJS Client/Server Example" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Angular/NestJS Client/Server Example
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Chapter 4 - Introduction to [Angular]
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to Dark Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to Dark Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to Light Mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to Light Mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-angular-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Angular/NestJS Client/Server Example" class="md-nav__button md-logo" aria-label="An Angular/NestJS Client/Server Example" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Angular/NestJS Client/Server Example
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-angular-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapter-1---setting-up-the-work-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Chapter 1 - Setting Up the Work Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapter-2---introduction-to-nestjs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Chapter 2 - Introduction to [NestJS]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapter-3---the-nestjs-server-for-the-rdvmedecins-application.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Chapter 3 - The [NestJS] server for the [RdvMedecins] application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Chapter 4 - Introduction to [Angular]
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="chapter-4---introduction-to-angular.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Chapter 4 - Introduction to [Angular]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-from-angularjs-1x-to-angular" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. From AngularJS 1.x to [Angular]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-the-concept-of-a-angular-application-the-single-page-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. The Concept of a [Angular] Application: the “Single Page Application”
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4. Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-signals-the-new-reactivity-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5. Signals: The New Reactivity Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-standalone-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6. Standalone components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-services-and-dependency-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7. Services and Dependency Injection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-communicating-with-the-server-httpclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8. Communicating with the server: [HttpClient]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-the-new-flow-control-syntax-if-and-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.9. The new flow control syntax: [@if] and [@for]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#510-summary-mappings-angularjs-1x-angular" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.10. Summary: mappings AngularJS 1.x -&gt; [Angular]
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapter-5---the-angular-client-of-the-rdvmedecins-application.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Chapter 5 - The [Angular] client of the [RdvMedecins] application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapter-6--conclusion-and-next-steps.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Chapter 6—Conclusion and Next Steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-4-introduction-a-angular" name="chapitre-4-introduction-a-angular" class="odt-bookmark-anchor"></span></p>
+<h1 id="5-chapter-4-introduction-to-angular">5. <span style="color: #2e74b5">Chapter 4 - Introduction to [Angular]</span></h1>
+<p><span id="sources-1" name="sources-1" class="odt-bookmark-anchor"></span></p>
+<h2 id="51-sources">5.1. <span style="color: #2e74b5">Sources</span></h2>
+<p>This chapter is based on the official documentation for [Angular]: <a href="https://angular.dev/"><u><span style="color: #0563c1">angular.dev</span></u></a>.</p>
+<p><span id="dangularjs-1x-a-angular" name="dangularjs-1x-a-angular" class="odt-bookmark-anchor"></span></p>
+<h2 id="52-from-angularjs-1x-to-angular">5.2. <span style="color: #2e74b5">From AngularJS 1.x to [Angular]</span></h2>
+<p>The original document (2014) used <strong>AngularJS and 1.x</strong>: a framework (JavaScript—not yet TypeScript) organized around $scope, controllers, directives (ng-repeat, ng-if…), and a change detection mechanism based on the “digestion loop ” ($digest) and variable monitoring ($watch).</p>
+<p>Starting in 2016, this framework was completely rewritten under the name <strong>[Angular]</strong> (without “JS”), as TypeScript, with a <strong>component-based</strong> architecture. Subsequent versions followed (2, 4… up to 22, used in this document), with two major changes you should be aware of before working with the [RdvMedecins] client code:</p>
+<ul>
+  <li>the phasing out of <b>NgModules </b>(@NgModule) in favor of <b>standalone</b>, self-contained components;
+  </li>
+  <li>the introduction of <b>signals </b>(signal()), a new reactivity model that replaces $watch/$digest.
+  </li>
+</ul>
+
+<p>This chapter presents these concepts one by one, with short examples independent of the case study—the next chapter will demonstrate them in action within the complete [RdvMedecins] client.</p>
+<p><span id="le-principe-dune-application-angular-le-single-page-application" name="le-principe-dune-application-angular-le-single-page-application" class="odt-bookmark-anchor"></span></p>
+<h2 id="53-the-concept-of-a-angular-application-the-single-page-application">5.3. <span style="color: #2e74b5">The Concept of a [Angular] Application: the “Single Page Application”</span></h2>
+<p>A [Angular] application is a <strong>single-page application</strong> (SPA, SPA): the server delivers only <strong>a single</strong> page (HTML) to the browser, containing a single JavaScript file that embeds all of the application’s logic. Once this page is loaded, there is never another full page reload: every user interaction (changing views, submitting a form, etc.) is handled by the JavaScript code already present in the browser, which updates the display and communicates with the server in the background via asynchronous HTTP requests (most often using JSON). This was already the principle behind the original document with AngularJS and 1.x—it hasn’t changed.</p>
+<p><span id="les-composants" name="les-composants" class="odt-bookmark-anchor"></span></p>
+<h2 id="54-components">5.4. <span style="color: #2e74b5">Components</span></h2>
+<p>A <strong>component</strong> is the basic unit of a [Angular] application: it associates a <strong>view</strong> (a HTML template) with a TypeScript class that manages its state and behavior—exactly the role played, in the original document, the “view + C controller” pair in AngularJS 1.x, but here combined into a single entity.</p>
+<p>Here is a very small component, independent of the case study, that could be created with <code>ng generate component counter</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">//</span><span class="w"> </span><span class="n">compteur</span><span class="p">.</span><span class="n">component</span><span class="p">.</span><span class="n">ts</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">import</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="n">Component</span><span class="p">,</span><span class="w"> </span><span class="n">signal</span><span class="w"> </span><span class="err">}</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="s1">'@angular/core'</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">@</span><span class="n">Component</span><span class="p">(</span><span class="err">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="n">selector</span><span class="p">:</span><span class="w"> </span><span class="s1">'app-compteur'</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="n">templateUrl</span><span class="p">:</span><span class="w"> </span><span class="s1">'./compteur.component.html'</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="err">}</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">export</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="n">CompteurComponent</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="n">readonly</span><span class="w"> </span><span class="n">valeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">signal</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="n">incrementer</span><span class="p">():</span><span class="w"> </span><span class="n">void</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="n">this</span><span class="p">.</span><span class="n">valeur</span><span class="p">.</span><span class="k">update</span><span class="p">((</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">  </span><span class="err">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="err">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="o">&lt;!</span><span class="c1">-- compteur.component.html --&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Valeur</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="n">valeur</span><span class="p">()</span><span class="w"> </span><span class="err">}}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">&lt;</span><span class="n">button</span><span class="w"> </span><span class="p">(</span><span class="n">click</span><span class="p">)</span><span class="o">=</span><span class="ss">"incrementer()"</span><span class="o">&gt;+</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>line 4: [@Component]({...}) is a <b>decorator </b>(same mechanism as in [NestJS]; see Chapter 2) that declares the following class as a [Angular] component;
+  </li>
+  <li>line 5: selector: &#x27;app-compteur&#x27;: the name of the custom HTML tag (&lt;app-compteur&gt;) which, when used in another component’s template, inserts that component at this location—the view composition mechanism, already present (in a different form, the directives) in AngularJS 1.x;
+  </li>
+  <li>line 6: templateUrl: the HTML file associated with this component (you can also write HTML directly in the decorator, using the template property);
+  </li>
+  <li>line 9: signal(0) creates a <b>reactive value </b>initialized to 0 (see the next section);
+  </li>
+  <li>line 16: {{ value() }} in the template: the double curly braces display a value calculated by the class—syntax <b>identical </b>to that of AngularJS and 1.x, but note the parentheses: `value` is a signal, and therefore a function that must be called to read its current value;
+  </li>
+  <li>line 17: (click)=&quot;incrementer()&quot;: the parentheses around `click` mean “listen for the `DOM` click event” and call the specified method—the exact equivalent of the `ng-click` directive in `AngularJS` 1.x.
+  </li>
+</ul>
+
+<p><span id="les-signaux-le-nouveau-modele-de-reactivite" name="les-signaux-le-nouveau-modele-de-reactivite" class="odt-bookmark-anchor"></span></p>
+<h2 id="55-signals-the-new-reactivity-model">5.5. <span style="color: #2e74b5">Signals: The New Reactivity Model</span></h2>
+<p>In AngularJS 1.x, [Angular] detected data changes using a systematic check loop (the $digest), which iterated through all monitored expressions ($watch) at every possible interaction. This mechanism, while simple to use, became costly as an application grew.</p>
+<p>A <strong>signal</strong> is a value container that <strong>knows</strong> when it changes and <strong>knows</strong> what depends on it (a template, another calculation, etc.)—so [Angular] no longer needs to recheck everything: only the parts of the application that actually depend on a modified signal are recalculated. Three functions are enough to grasp the basics:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>Fonction</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>Rôle</b></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>monSignal(valeurInitiale)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">creates a signal; its value is read by calling it as a function: monSignal()</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>monSignal.set(nouvelleValeur)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">replaces the signal&#x27;s value</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">monSignal</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">...)</span>
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">calculates the new value based on the old one (see increment() above)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>computed(() =&gt; ...)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">creates a signal that is automatically calculated from other signals and recalculated only when necessary</div></td></tr></table>
+
+<p>Two specialized variants of signal() are used to enable a component to communicate with its parent—they appear frequently in the [RdvMedecins] client (see the next chapter):</p>
+<ul>
+  <li>input() (and its variant input.required()) declares an <b>input</b>: a value provided by the parent component. This is the modern evolution of the historic @Input() decorator, and the conceptual equivalent of a AngularJS 1.x directive attribute;
+  </li>
+  <li>output() declares an <b>output</b>: an event that the component can emit to its parent (using the .emit(value) method). This is the modern evolution of @Output() / EventEmitter, and the equivalent of the custom events ($emit) from AngularJS 1.x.
+  </li>
+</ul>
+
+<p><span id="les-composants-standalone" name="les-composants-standalone" class="odt-bookmark-anchor"></span></p>
+<h2 id="56-standalone-components">5.6. <span style="color: #2e74b5">Standalone components</span></h2>
+<p>A AngularJS 1.x application was organized into <strong>modules</strong> (angular.module(...)), declaring controllers, directives, and services. [Angular] first adopted this idea in a more rigid form (the NgModule, @NgModule decorator), before introducing, in recent versions, <strong>standalone</strong> components—which have since become the default operating mode.</p>
+<p><strong>A</strong> standalone component declares everything it needs—such as the other components it uses in its template—within its own [@Component] decorator, rather than relying on a shared module:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nd">@Component</span><span class="p">({</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="n">selector</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="n">app</span><span class="o">-</span><span class="n">parent</span><span class="err">'</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span><span class="n">imports</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">CompteurComponent</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="c1">// components used in the template</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">  </span><span class="n">templateUrl</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="p">.</span><span class="o">/</span><span class="n">parent</span><span class="p">.</span><span class="na">component</span><span class="p">.</span><span class="na">html</span><span class="err">'</span><span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p">})</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">export</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ParentComponent</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div></td></tr></table></div>
+<p>This is the style used throughout the [RdvMedecins] client (see the next chapter): no *.module.ts files appear there anymore, a significant simplification compared to both AngularJS and 1.x, as well as to earlier versions of Angular.</p>
+<p><span id="les-services-et-linjection-de-dependances" name="les-services-et-linjection-de-dependances" class="odt-bookmark-anchor"></span></p>
+<h2 id="57-services-and-dependency-injection">5.7. <span style="color: #2e74b5">Services and Dependency Injection</span></h2>
+<p>As in [NestJS] (Chapter 2), a [Angular] <strong>service</strong> is an ordinary class, decorated by [@Injectable], which [Angular] can automatically create and provide to any component that needs it - the same concept <strong>of dependency injection</strong>, for which AngularJS and 1.x were, in fact, among the very first JavaScript frameworks to popularize the principle (it is no coincidence that [NestJS] drew direct inspiration from it, as noted in Chapter 2).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="p">{</span> <span class="n">Injectable</span> <span class="p">}</span> <span class="kn">from</span><span class="w"> </span><span class="s1">'@angular/core'</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nd">@Injectable</span><span class="p">({</span> <span class="n">providedIn</span><span class="p">:</span> <span class="s1">'root'</span> <span class="p">})</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">export</span> <span class="k">class</span><span class="w"> </span><span class="nc">MonService</span> <span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>  <span class="n">saluer</span><span class="p">():</span> <span class="n">string</span> <span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="k">return</span> <span class="s1">'Bonjour'</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>  <span class="p">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>Line 3: providedIn: &#x27;root&#x27; indicates that a single instance of this service is created for the entire application (a singleton)—the equivalent of what a .service() or a .factory() was in AngularJS 1.x.
+  </li>
+</ul>
+
+<p>To obtain this service in a component, the modern [Angular] provides the inject() function, which replaces the legacy constructor injection (both still work, but inject() has become the standard practice, and is the one used by the [RdvMedecins] client):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Component</span><span class="p">,</span><span class="w"> </span><span class="nx">inject</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@angular/core'</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MonService</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./mon.service'</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="kd">@Component</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">})</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">MonComposant</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">monService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">inject</span><span class="p">(</span><span class="nx">MonService</span><span class="p">);</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><span id="communiquer-avec-le-serveur-httpclient" name="communiquer-avec-le-serveur-httpclient" class="odt-bookmark-anchor"></span></p>
+<h2 id="58-communicating-with-the-server-httpclient">5.8. <span style="color: #2e74b5">Communicating with the server: [HttpClient]</span></h2>
+<p>The [HttpClient] ([@angular/common/http]) module allows you to send requests HTTP - GET, POST… - to a server and process its response. It is a direct evolution of the $http service from AngularJS and 1.x used by the original document.</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">import { inject } from &#x27;@angular/core&#x27;;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">import { HttpClient } from &#x27;@angular/common/http&#x27;;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">const http = inject(HttpClient);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">http.get&lt;{ message: string }&gt;(&#x27;http://localhost:8080/hello&#x27;).subscribe({</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="background-color:#fff5ce">next</span>: (reponse) =&gt; console.log(reponse.message),</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="background-color:#fff5ce">error</span>: (erreur) =&gt; console.error(erreur),</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">});</span></span>
+</code></pre></div>
+
+<p>An important difference from $http: the methods of [HttpClient] (get, post…) do not directly return the response, nor a Promise as one might expect, but an <strong>Observable</strong> (RxJS library)—a stream of values over time, which you subscribe to using <code>.subscribe({ next, error })</code> to be notified when the response arrives (or an error occurs). You can also transform an Observable before subscribing to it, using <strong>operators</strong> like <code>map</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="o">&lt;</span><span class="p">{</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">}</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">'...'</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="nx">map</span><span class="p">((</span><span class="nx">reponse</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">reponse</span><span class="p">.</span><span class="nx">message</span><span class="p">),</span><span class="w"> </span><span class="c1">// Only the "message" field is retained</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>The [RdvService] service of the [RdvMedecins] client (next chapter) consistently uses this .pipe(map(...)) combination for a specific reason explained there.</p>
+<p><span id="la-nouvelle-syntaxe-de-controle-de-flux-if-et-for" name="la-nouvelle-syntaxe-de-controle-de-flux-if-et-for" class="odt-bookmark-anchor"></span></p>
+<h2 id="59-the-new-flow-control-syntax-if-and-for">5.9. <span style="color: #2e74b5">The new flow control syntax: [@if] and [@for]</span></h2>
+<p>AngularJS and 1.x used structural directives (ng-if, ng-repeat) to display an element conditionally or repeat a template block for each element in a list. [Angular] long used a very similar equivalent (*ngIf, *ngFor), before introducing, in its recent versions, a syntax integrated into the template language itself—the one used throughout the [RdvMedecins] client:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>@if (utilisateurConnecte()) {
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Bienvenue !<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>} @else {
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Veuillez vous connecter.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>}
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>  @for (item of listeItems(); track item.id) {
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ item.nom }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a>  }
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>line 8: track item.[id] (required with [@for]) tells [Angular] how to recognize an element that has already been displayed when it redraws the list—much like how “track by” was already possible, as an option, with ng-repeat.
+  </li>
+</ul>
+
+<p><span id="recapitulatif-correspondances-angularjs-1x---angular" name="recapitulatif-correspondances-angularjs-1x---angular" class="odt-bookmark-anchor"></span></p>
+<h2 id="510-summary-mappings-angularjs-1x-angular">5.10. <span style="color: #2e74b5">Summary: mappings AngularJS 1.x -&gt; [Angular]</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>AngularJS 1.x (2014)</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[Angular] (2026)</b></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Contrôleur + $scope
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Component (class + template)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$watch / boucle $digest
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Signals (signal(), computed())</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>angular.module(...), @NgModule
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Standalone</b> components</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>@Input() / @Output() (historique)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">input() / output() (signals)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>.service() / .factory()
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">[@Injectable]({ providedIn: &#x27;root&#x27; })</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Injection par constructeur
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">inject() (or always via the constructor)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$http
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">[HttpClient] (Observables RxJS)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ng-if / ng-repeat
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">[@if] / [@for]</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>JavaScript
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">TypeScript</div></td></tr></table>
+
+<p>This background is sufficient to tackle the [RdvMedecins] client in the next chapter: each new feature will nevertheless be explained again there, as the code progresses, at the exact point where it appears.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        This tutorial, written by the AI <strong>Claude</strong> from Anthropic and reviewed by <strong>Serge Tahé</strong>, is made available to the public under the terms of the
+        <em>Creative Commons Attribution – Non-Commercial –
+        ShareAlike 3.0 Unported License</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
