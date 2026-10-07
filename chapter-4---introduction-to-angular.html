@@ -701,23 +701,23 @@
 <span class="normal"><a href="#__codelineno-0-14">14</a></span>
 <span class="normal"><a href="#__codelineno-0-15">15</a></span>
 <span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">//</span><span class="w"> </span><span class="n">compteur</span><span class="p">.</span><span class="n">component</span><span class="p">.</span><span class="n">ts</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">import</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="n">Component</span><span class="p">,</span><span class="w"> </span><span class="n">signal</span><span class="w"> </span><span class="err">}</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// compteur.component.ts</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Component</span><span class="p">,</span><span class="w"> </span><span class="nx">signal</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@angular/core'</span><span class="p">;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">@</span><span class="n">Component</span><span class="p">(</span><span class="err">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="n">selector</span><span class="p">:</span><span class="w"> </span><span class="s1">'app-compteur'</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="n">templateUrl</span><span class="p">:</span><span class="w"> </span><span class="s1">'./compteur.component.html'</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="err">}</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">export</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="n">CompteurComponent</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="n">readonly</span><span class="w"> </span><span class="n">valeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">signal</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kd">@Component</span><span class="p">({</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">'app-compteur'</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="nx">templateUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">'./compteur.component.html'</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">})</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">CompteurComponent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="k">readonly</span><span class="w"> </span><span class="nx">valeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">signal</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="n">incrementer</span><span class="p">():</span><span class="w"> </span><span class="n">void</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="n">this</span><span class="p">.</span><span class="n">valeur</span><span class="p">.</span><span class="k">update</span><span class="p">((</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">  </span><span class="err">}</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="err">}</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="o">&lt;!</span><span class="c1">-- compteur.component.html --&gt;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Valeur</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">{{</span><span class="w"> </span><span class="n">valeur</span><span class="p">()</span><span class="w"> </span><span class="err">}}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">&lt;</span><span class="n">button</span><span class="w"> </span><span class="p">(</span><span class="n">click</span><span class="p">)</span><span class="o">=</span><span class="ss">"incrementer()"</span><span class="o">&gt;+</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="nx">incrementer</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">valeur</span><span class="p">.</span><span class="nx">update</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="c">&lt;!--</span><span class="w"> </span><span class="nx">compteur</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">html</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Valeur</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="nx">valeur</span><span class="p">()</span><span class="w"> </span><span class="p">}}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="p">(</span><span class="nx">click</span><span class="p">)</span><span class="o">=</span><span class="s2">"incrementer()"</span><span class="o">&gt;+</span><span class="mf">1</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
   <li>line 4: [@Component]({...}) is a <b>decorator </b>(same mechanism as in [NestJS]; see Chapter 2) that declares the following class as a [Angular] component;
@@ -739,16 +739,16 @@
 <p>In AngularJS 1.x, [Angular] detected data changes using a systematic check loop (the $digest), which iterated through all monitored expressions ($watch) at every possible interaction. This mechanism, while simple to use, became costly as an application grew.</p>
 <p>A <strong>signal</strong> is a value container that <strong>knows</strong> when it changes and <strong>knows</strong> what depends on it (a template, another calculation, etc.)—so [Angular] no longer needs to recheck everything: only the parts of the application that actually depend on a modified signal are recalculated. Three functions are enough to grasp the basics:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>Fonction</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>Rôle</b></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>monSignal(valeurInitiale)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">monSignal</span><span class="p">(</span><span class="nx">valeurInitiale</span><span class="p">)</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">creates a signal; its value is read by calling it as a function: monSignal()</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>monSignal.set(nouvelleValeur)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">monSignal</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">nouvelleValeur</span><span class="p">)</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">replaces the signal&#x27;s value</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">monSignal</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">...)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">monSignal</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">...)</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">calculates the new value based on the old one (see increment() above)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>computed(() =&gt; ...)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">computed</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">...)</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">creates a signal that is automatically calculated from other signals and recalculated only when necessary</div></td></tr></table>
 
@@ -769,12 +769,12 @@
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
 <span class="normal"><a href="#__codelineno-5-4">4</a></span>
 <span class="normal"><a href="#__codelineno-5-5">5</a></span>
-<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nd">@Component</span><span class="p">({</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="n">selector</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="n">app</span><span class="o">-</span><span class="n">parent</span><span class="err">'</span><span class="p">,</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span><span class="n">imports</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="n">CompteurComponent</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="c1">// components used in the template</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">  </span><span class="n">templateUrl</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="p">.</span><span class="o">/</span><span class="n">parent</span><span class="p">.</span><span class="na">component</span><span class="p">.</span><span class="na">html</span><span class="err">'</span><span class="p">,</span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">@Component</span><span class="p">({</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">'app-parent'</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span><span class="nx">imports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">CompteurComponent</span><span class="p">],</span><span class="w"> </span><span class="c1">// components used in the template</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">  </span><span class="nx">templateUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">'./parent.component.html'</span><span class="p">,</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p">})</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">export</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ParentComponent</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">ParentComponent</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div></td></tr></table></div>
 <p>This is the style used throughout the [RdvMedecins] client (see the next chapter): no *.module.ts files appear there anymore, a significant simplification compared to both AngularJS and 1.x, as well as to earlier versions of Angular.</p>
 <p><span id="les-services-et-linjection-de-dependances" name="les-services-et-linjection-de-dependances" class="odt-bookmark-anchor"></span></p>
@@ -787,13 +787,13 @@
 <span class="normal"><a href="#__codelineno-6-5">5</a></span>
 <span class="normal"><a href="#__codelineno-6-6">6</a></span>
 <span class="normal"><a href="#__codelineno-6-7">7</a></span>
-<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="p">{</span> <span class="n">Injectable</span> <span class="p">}</span> <span class="kn">from</span><span class="w"> </span><span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Injectable</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@angular/core'</span><span class="p">;</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nd">@Injectable</span><span class="p">({</span> <span class="n">providedIn</span><span class="p">:</span> <span class="s1">'root'</span> <span class="p">})</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">export</span> <span class="k">class</span><span class="w"> </span><span class="nc">MonService</span> <span class="p">{</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>  <span class="n">saluer</span><span class="p">():</span> <span class="n">string</span> <span class="p">{</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="k">return</span> <span class="s1">'Bonjour'</span><span class="p">;</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a>  <span class="p">}</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kd">@Injectable</span><span class="p">({</span><span class="w"> </span><span class="nx">providedIn</span><span class="o">:</span><span class="w"> </span><span class="s1">'root'</span><span class="w"> </span><span class="p">})</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">MonService</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">  </span><span class="nx">saluer</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">'Bonjour'</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
@@ -819,7 +819,7 @@
 <p><span id="communiquer-avec-le-serveur-httpclient" name="communiquer-avec-le-serveur-httpclient" class="odt-bookmark-anchor"></span></p>
 <h2 id="58-communicating-with-the-server-httpclient">5.8. <span style="color: #2e74b5">Communicating with the server: [HttpClient]</span></h2>
 <p>The [HttpClient] ([@angular/common/http]) module allows you to send requests HTTP - GET, POST… - to a server and process its response. It is a direct evolution of the $http service from AngularJS and 1.x used by the original document.</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content">import { inject } from &#x27;@angular/core&#x27;;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">import { HttpClient } from &#x27;@angular/common/http&#x27;;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
